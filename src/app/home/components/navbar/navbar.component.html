@@ -1,0 +1,58 @@
+<nav
+  class="navbar sticky-top navbar-expand-xl navbar-light bg-light"
+  style="
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  "
+>
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand">
+      <img
+        src="../../../assets/icon/shopping-cart.png"
+        alt="Shopping Cart"
+        width="50"
+        height="50"
+        class="d-inline-block align-text-center mx-3"
+      />
+      <span class="fs-2 mx-3">Shopping Cart</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav fs-4">
+        <li class="nav-item active">
+          <a routerLink="/" class="nav-link">Home </a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!isAdmin()" routerLink="/cart" class="nav-link">
+            <button type="button" class="btn btn-primary">
+              My Cart
+              <span class="badge alert-secondary">{{
+                totolItems == 0 ? "" : totolItems
+              }}</span>
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isAdmin()" routerLink="/product/new" class="nav-link"
+            >Add Product</a
+          >
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!isLogin()" routerLink="/auth" class="nav-link">Login </a>
+          <a *ngIf="isLogin()" (click)="logout()" type="button" class="nav-link"
+            >Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

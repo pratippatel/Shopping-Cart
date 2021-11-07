@@ -1,0 +1,86 @@
+<div class="row g-0 justify-content-center">
+  <div class="card mt-4 p-5" style="max-width: 70%">
+    <form [formGroup]="productForm" (ngSubmit)="onAddProduct()">
+      <input type="number" formControlName="id" hidden />
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder=" "
+          formControlName="name"
+        />
+        <label for="name">Product Name</label>
+        <div
+          *ngIf="!name.valid && (name.dirty || name.touched)"
+          class="text-danger"
+          style="font-size: smaller"
+        >
+          <div *ngIf="name.errors?.['required']">Name is required.</div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="number"
+          class="form-control"
+          placeholder=" "
+          min="1"
+          step="any"
+          formControlName="price"
+        />
+        <label for="price">Price ($)</label>
+        <div
+          *ngIf="!price.valid && (price.dirty || price.touched)"
+          class="text-danger"
+          style="font-size: smaller"
+        >
+          <div *ngIf="price.errors?.['required']">Price is required.</div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="imgURL"
+          placeholder=" "
+          formControlName="imgURL"
+        />
+        <label for="imgURL">Image URL</label>
+        <div
+          *ngIf="!imgURL.valid && (imgURL.dirty || imgURL.touched)"
+          class="text-danger"
+          style="font-size: smaller"
+        >
+          <div *ngIf="imgURL.errors?.['required']">imgURL is required.</div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <textarea
+          class="form-control"
+          placeholder=" "
+          id="desc"
+          formControlName="description"
+        ></textarea>
+        <label for="desc">Product Description</label>
+        <div
+          *ngIf="
+            !description.valid && (description.dirty || description.touched)
+          "
+          class="text-danger"
+          style="font-size: smaller"
+        >
+          <div *ngIf="description.errors?.['required']">
+            Product Description is required.
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary mt-2"
+        [disabled]="!productForm.valid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

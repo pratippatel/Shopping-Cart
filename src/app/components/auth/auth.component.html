@@ -1,0 +1,153 @@
+<div class="row justify-content-center align-items-center" style="height: 100%">
+  <div class="wrapper">
+    <div class="title-text" #titleText>
+      <div class="title login">Login Form</div>
+      <div class="title signup">Signup Form</div>
+    </div>
+    <div class="form-container">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked />
+        <input type="radio" name="slide" id="signup" />
+        <label for="login" class="slide login" (click)="onLoginSlide()"
+          >Login</label
+        >
+        <label for="signup" class="slide signup" (click)="onSignUpSlide()"
+          >Signup</label
+        >
+        <div class="slider-tab"></div>
+      </div>
+      <div class="form-inner">
+        <form
+          action="#"
+          [formGroup]="loginForm"
+          (ngSubmit)="onLogin()"
+          class="login"
+          #loginTab
+        >
+          <div class="field">
+            <input
+              type="text"
+              formControlName="username"
+              placeholder="Email Address"
+            />
+            <div
+              *ngIf="!usernameL.valid && (usernameL.dirty || usernameL.touched)"
+              class="text-danger"
+              style="font-size: smaller"
+            >
+              <div *ngIf="usernameL.errors?.['required']">
+                Email is required
+              </div>
+              <div *ngIf="usernameL.errors?.['email']">Email is invalid</div>
+            </div>
+          </div>
+          <div class="field">
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <div
+              *ngIf="!passwordL.valid && (passwordL.dirty || passwordL.touched)"
+              class="text-danger"
+              style="font-size: smaller"
+            >
+              <div *ngIf="passwordL.errors?.['required']">
+                Password is required
+              </div>
+            </div>
+          </div>
+          <div class="pass-link mt-4"><a href="#">Forgot password?</a></div>
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input type="submit" value="Login" [disabled]="!loginForm.valid" />
+          </div>
+          <div class="signup-link">Not a member? <a href="">Signup now</a></div>
+        </form>
+        <form
+          action="#"
+          class="signup"
+          [formGroup]="signUpForm"
+          (ngSubmit)="onSignUp()"
+        >
+          <div class="field">
+            <input
+              type="text"
+              formControlName="username"
+              placeholder="Email Address"
+            />
+            <div
+              *ngIf="!usernameS.valid && (usernameS.dirty || usernameS.touched)"
+              class="text-danger"
+              style="font-size: smaller"
+            >
+              <div *ngIf="usernameS.errors?.['required']">
+                Email is required
+              </div>
+              <div *ngIf="usernameS.errors?.['email']">Email is invalid</div>
+            </div>
+          </div>
+          <div class="field">
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <div
+              *ngIf="!passwordS.valid && (passwordS.dirty || passwordS.touched)"
+              class="text-danger"
+              style="font-size: smaller"
+            >
+              <div *ngIf="passwordS.errors?.['required']">
+                Password is required
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <input
+              type="password"
+              placeholder="Confirm password"
+              formControlName="confirmPassword"
+              (change)="onConfirmChange($event)"
+            />
+            <div
+              *ngIf="
+                !confirmPasswordS.valid &&
+                (confirmPasswordS.dirty || confirmPasswordS.touched)
+              "
+              class="text-danger"
+              style="font-size: smaller"
+            >
+              <div *ngIf="confirmPasswordS.errors?.['required']">
+                ConfirmPassword is required
+              </div>
+            </div>
+          </div>
+          <div
+            *ngIf="!signUpForm.valid"
+            class="text-danger"
+            style="font-size: smaller"
+          >
+            <div
+              *ngIf="
+                passwordS.value != confirmPasswordS.value &&
+                (confirmPasswordS.dirty || confirmPasswordS.touched) &&
+                (passwordS.dirty || passwordS.touched)
+              "
+            >
+              ConfirmPassword is not same as password
+            </div>
+          </div>
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input
+              type="submit"
+              value="Signup"
+              [disabled]="!signUpForm.valid"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

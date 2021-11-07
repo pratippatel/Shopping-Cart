@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "US Polo Association Men's Regular fit T-Shirt",
+      "price": 7,
+      "imgURL": "https://m.media-amazon.com/images/I/61sXVgYH0LS._UL1500_.jpg",
+      "description": "Henley neck short sleeve t-shirt. Placket with 2 buttons. Contrast logo embroidery. Comfort fit."
+    },
+    {
+      "id": 2,
+      "name": "Razer Kraken X Ultralight Gaming Headset",
+      "price": 30,
+      "imgURL": "https://m.media-amazon.com/images/I/51q7Td1wWUL._AC_SL1500_.jpg",
+      "description": "Razer Kraken X Ultralight Gaming Headset: 7.1 Surround Sound Capable - Lightweight Frame - Integrated Audio Controls - Bendable Cardioid Microphone - for PC, PS4, Nintendo Switch - Mercury White"
+    },
+    {
+      "id": 3,
+      "name": "Samsung 27 inch M5 Smart Monitor",
+      "price": 25,
+      "imgURL": "https://m.media-amazon.com/images/I/81P2heRBdYL._SL1500_.jpg",
+      "description": "Samsung 27 inch M5 Smart Monitor with Netflix, YouTube, Prime Video and Apple TV Streaming (LS27AM500NWXXL, Black)"
+    },
+    {
+      "id": 4,
+      "name": "LG 8.0 Kg 5 Star Washing Machine",
+      "price": 32,
+      "imgURL": "https://m.media-amazon.com/images/I/71DGPoGZY9L._SL1500_.jpg",
+      "description": "LG 8.0 Kg 5 Star Inverter Fully-Automatic Front Loading Washing Machine (FHM1208ZDL, Luxury Silver, Direct Drive Technology)"
+    },
+    {
+      "id": 5,
+      "name": "Ikigai",
+      "price": 2,
+      "imgURL": "https://images-na.ssl-images-amazon.com/images/I/51T8OXMiB5L._SX356_BO1,204,203,200_.jpg",
+      "description": "Ikigai: The Japanese secret to a long and happy life"
+    },
+    {
+      "name": "Chair",
+      "price": 7,
+      "description": "office chair",
+      "imgURL": "https://m.media-amazon.com/images/I/71mKwaKglhL._SL1500_.jpg",
+      "id": 6
+    },
+    {
+      "name": "dsafasdf",
+      "price": 34,
+      "description": "another chair",
+      "imgURL": "https://m.media-amazon.com/images/I/91YELP0WnsL._SL1500_.jpg",
+      "id": 7
+    },
+    {
+      "name": "sdas",
+      "price": 23,
+      "description": "sdf",
+      "imgURL": "fasdf",
+      "id": 8
+    }
+  ],
+  "cart": [],
+  "auth": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "isAdmin": true
+    },
+    {
+      "username": "asd@a",
+      "password": "asd",
+      "id": 2
+    }
+  ]
+}

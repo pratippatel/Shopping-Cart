@@ -1,0 +1,60 @@
+<div style="display: flow-root">
+  <div *ngIf="products.length > 0; else noProducts">
+    <div class="container-fluid mb-5">
+      <div *ngFor="let product of products">
+        <div class="row g-0 justify-content-center">
+          <div
+            class="card my-4 p-0"
+            style="
+              max-width: 70%;
+              box-shadow: rgba(142, 113, 238, 0.4) -5px 5px,
+                rgba(142, 113, 238, 0.3) -10px 10px,
+                rgba(142, 113, 238, 0.2) -15px 15px,
+                rgba(142, 113, 238, 0.1) -20px 20px,
+                rgba(142, 113, 238, 0.05) -25px 25px;
+            "
+          >
+            <div class="row g-0">
+              <div class="col-md-4" style="max-width: 30%">
+                <img
+                  src="{{ product.imgURL }}"
+                  style="width: 300px; height: 300px; object-fit: contain"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8" style="max-width: 70%">
+                <div class="card-body" style="position: relative; height: 100%">
+                  <div style="height: 80%">
+                    <h5 class="card-title fs-2">{{ product.name }}</h5>
+                    <p class="card-text fs-4">
+                      Price :
+                      <small class="text-muted">{{ product.price }} $</small>
+                    </p>
+                    <p class="fs-5">Description :</p>
+                    <p class="card-text mb-3">{{ product.description }}</p>
+                  </div>
+                  <div style="height: 20%">
+                    <button
+                      *ngIf="!isAdmin()"
+                      type="button"
+                      (click)="_addItemToCart(product)"
+                      class="btn btn-success mt-1 float-end"
+                    >
+                      Add To Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noProducts>
+    <div class="text-center mt-5">
+      There's No Products Currently, Please Come Back Later...!!
+    </div>
+  </ng-template>
+</div>
