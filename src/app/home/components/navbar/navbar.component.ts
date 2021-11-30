@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
 
   isAdmin() {
     const user = this.auth.getUsername();
-    if (user == 'admin') {
+    if (user == 'admin@gmail.com') {
       return true;
     }
     return false;
